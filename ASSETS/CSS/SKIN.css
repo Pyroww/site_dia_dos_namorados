@@ -1,0 +1,229 @@
+body {
+  
+  display: block;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/*adição de fontes */
+@font-face{
+  font-family: "fonte_de_titulo";
+  src: url('../FONTES/valentine_cute/Valentine Cute.ttf');
+}
+/* Formatação de titulos */
+h1 {
+  display:block;
+  position: absolute;
+  top: 10px;
+  left: 30%;
+  transform: translateX(-20%);
+  color: black;
+  font-family: fonte_de_titulo;
+	font-size: 22pt;
+	border-bottom: 6px solid #a82424;
+}
+
+h2 {
+  font-size: 11pt;
+}
+svg {
+  overflow: visible;
+  margin-top: 27%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+svg path#line {
+  fill: none;
+  stroke: #e00000;
+  stroke-width: 2;
+  stroke-linecap: butt;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray:none;
+  stroke-opacity: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: dash 4s linear infinite;
+}
+svg path#heart {
+  transform-origin: 50% 50%;
+  animation: blink 4s linear infinite;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  80% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  60% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  85% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
+
+/* Adição da carta */
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+body {
+  background: #FFE3EC;
+  font-family: 'Pangolin', cursive;
+  font-size: 1vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  top: 55.75vmin; /* 35 * 1.25 */
+}
+
+.envelope {
+  position: relative;
+  background: #eb7885;
+  height: 37.5vmin; /* 30 * 1.25 */
+  width: 60vmin;    /* 48 * 1.25 */
+}
+
+.card {
+  position: absolute;
+  background: white;
+  height: 43.75vmin; /* 35 * 1.25 */
+  width: 53vmin;  /* 53 * 1.25 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 3.125vmin;   /* 2.5 * 1.25 */
+  top: 0vmin;
+  animation: slide-rev 0.2s ease-out;
+}
+
+.message {
+  position: absolute;
+  top: 1vmin; /* 1 * 1.25 */
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.cover {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-bottom: 28.75vmin solid #f5b5bb; /* 15 * 1.25 */
+  border-left: 30vmin solid transparent;   /* 24 * 1.25 */
+  border-right: 30vmin solid transparent;
+  top: 18.75vmin;
+  z-index: 3;
+}
+
+.cover::after {
+  position: absolute;
+  content: '';
+  border-left: 30.625vmin solid #ffbbc1; /* 24.5 * 1.25 */
+  border-bottom: 28.75vmin solid transparent;
+  border-top: 18.75vmin solid transparent;
+  top: -18.75vmin;
+  left: -30vmin;
+}
+
+.cover::before {
+  position: absolute;
+  content: '';
+  border-right: 30.625vmin solid #ffbbc1; /* 24.5 * 1.25 */
+  border-bottom: 28.75vmin solid transparent;
+  border-top: 18.75vmin solid transparent;
+  top: -18.75vmin;
+  left: -0.625vmin; /* 0.5 * 1.25 */
+}
+
+.lid {
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-top: 18.75vmin solid #ff8896; /* 15 * 1.25 */
+  border-left: 30vmin solid transparent;
+  border-right: 30vmin solid transparent;
+  top: 0;
+  transform-origin: top;
+  animation: open-rev 2s;
+}
+
+.container:hover .lid {
+  animation: open 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.container:hover .card {
+  animation: slide 0.2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.shadow {
+  position: relative;
+  top: 3.75vmin; /* 3 * 1.25 */
+  border-radius: 50%;
+  opacity: 0.7;
+  height: 2.5vmin; /* 2 * 1.25 */
+  width: 60vmin;   /* 48 * 1.25 */
+  background: #e8c5d0;
+}
+
+@keyframes open {
+  100% {
+    transform: rotatex(180deg);
+  }
+}
+
+@keyframes slide {
+  100% {
+    transform: translatey(-39.75vmin); /* 15 * 1.25 */
+    z-index: 2;
+  }
+}
+
+@keyframes open-rev {
+  from {
+    transform: rotatex(-180deg);
+  }
+}
+
+@keyframes slide-rev {
+  from {
+    transform: translatey(-18.75vmin); /* 15 * 1.25 */
+  }
+}
